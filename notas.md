@@ -36,3 +36,8 @@
 - Function
 - Block
 - Module
+
+### Closure
+
+- Utilizados como generadores de funciones
+- Permiten la creaciond de variables privadas en JS
