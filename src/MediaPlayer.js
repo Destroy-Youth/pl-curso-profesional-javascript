@@ -20,11 +20,11 @@ class MediaPlayer {
   }
 
   mute() {
-    this.media.muted = true
-  }
-
-  unmute() {
-    this.media.mute = false
+    if (this.media.muted) {
+      this.media.muted = false
+    } else {
+      this.media.muted = true
+    }
   }
 }
 
