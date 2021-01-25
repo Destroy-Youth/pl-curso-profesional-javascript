@@ -63,3 +63,49 @@ apply, call y bind son funcione propias del prototipo _function_
   danielCamina("oeste");
   juanCamina();
   ```
+
+### Prototype
+
+- _new_ es syntactic sugar para `Object.create(obj)`, que a partir del prototipo de un objeto, genera uno nuevo que "hereda" del original
+- Todos los objetos tiene un **prototype** que hereda de otro prototype, que asu vez hereda de otro y asi sucesivamente creando el _prototype chain_.
+  - Cuando llamamos a una funcion o atributo en un objeto que no fue creado explicitamente con tal funcion, javascript buscara la funcion en el prototype chain de manera ascendente hasta encontrar un match.
+  - _hasOwnProperty_ funciona para verificar si la propiedad es propia del objeto y no de un prototipo.
+
+## Funcionamiento de Javascript
+
+- Creado en Netscape
+- Es interpretado
+
+### Funcionamiento del motor de Js
+
+1. Recibe codigo fuente.
+2. Parsea y produce un **Abstract Syntax Tree** (AST).
+3. Se compila en bytecode y se ejecuta.
+4. Se optimiza a machine code y se reemplaza el codigo base.
+
+> Un SyntaxError es lanzado cuando el parser encuentra partes del codigo que no pertenecen a la sintaxis del lenguaje.
+> El parsing toma un 15% al 20% del proceso de ejecucion.
+> Bundling y code splitting es muy importante, ya que la mayoria del codigo JS en una pagina **nunca** se ejecuta.
+
+### Parser de V8
+
+#### Eager
+
+- Encuentra errores de syntaxis
+- Crea el AST
+- Construye scopes
+
+#### Lazy
+
+- Doble de rapido que el Eager parsing
+- No crea AST
+  -Constrye parcialmente los scopes
+
+#### AST
+
+Es un grafo que representa el programa.
+Usado tambien en bundlers, transpilers, linters, type checkers y syntax highlighters
+
+### Interpreter
+Convierte el AST en **bytecode** que es similar al ensamblador para el navegador.
+
