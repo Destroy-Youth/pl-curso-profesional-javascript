@@ -107,5 +107,35 @@ Es un grafo que representa el programa.
 Usado tambien en bundlers, transpilers, linters, type checkers y syntax highlighters
 
 ### Interpreter
-Convierte el AST en **bytecode** que es similar al ensamblador para el navegador.
 
+Convierte el AST en **bytecode** que es similar al ensamblador para el navegador.
+A la par un **optimizing compiler o profiler** crea datos perfiladoes para que el resultado **Machine code** sea mas eficiente.
+
+> Hot functions en V8: Bloqes de codigo ejecutados muy seguido que el engine mantendra en cache para que sea mas rapida su ejecucion.
+
+#### Bytecode vs MachineCode
+
+| Bytecode                                                              | Machine code                                                                |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Codigo similar a assembly. Portatil. Ejecutado en la virtual machine. | Binario. Instruccuines especificas para un procesador, por su arquitectura. |
+
+### Cada navegador tiene su implementación de JavaScript Engine:
+
+- SpiderMonkey - Firefox
+- Chackra - Edge
+- JavaScriptCore - Safari
+- V8 - Chrome
+
+### Eventloop
+
+El feature que permite a js parecer ser multithread, siendo que solo tine un thread.
+
+- Call Stack: Pila de ejecucion del lenguaje.
+- Memory heap: Espacio de memeoria que contiene informacion sobre las variables, scope y objetos.
+- Componentes asincronos:
+  - Scheduled task: Fila de tareas asincronas que se programaron para ser ejecutadas.
+  - Task queue: Las tareas que estan listas para entrar en el _event loop_ y ser procesadas eventualmente.
+  - Microtask queue: Tareas asincronas que tienen prioridad para entrar al Call stack, como las **Promesas**
+  - Event loop: Cuando el Call stack esta vacio, introduce tareas del task queue para ser ejecutadas.
+
+> **Recuerda!!!** Nunca bloquees el hilo principal.
