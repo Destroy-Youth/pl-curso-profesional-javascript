@@ -139,3 +139,40 @@ El feature que permite a js parecer ser multithread, siendo que solo tine un thr
   - Event loop: Cuando el Call stack esta vacio, introduce tareas del task queue para ser ejecutadas.
 
 > **Recuerda!!!** Nunca bloquees el hilo principal.
+
+#### Promises
+
+```javascript
+// Peticiones secuenciales
+async function getTopMoviesInSequence() {
+  const ids = await getTopMoviesIds()
+  const movies = []
+
+  for (const id of ids) {
+    const movie = await getMovie(id)
+    movies.push(movie)
+  }
+
+  return movies
+}
+
+// Peticiones en paralelo
+async function getTopMoviesInParallel() {
+  const ids = await getTopMoviesIds()
+  const moviePromises = ids.map(id => getMovie(id))
+
+  const movies = await Promise.all(moviePromises)
+
+  return movies
+}
+
+// La promesa que se resuelva primero
+async function getFastestTopMovie() {
+  const ids = await getTopMoviesIds()
+  const moviePromises = ids.map(id => getMovie(id))
+  const movie = await Promise.race(moviePromises)
+  return movie
+}
+```
+
+> Todas las funciones _async_ regresan una promesa.
