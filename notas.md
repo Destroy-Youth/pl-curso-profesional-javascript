@@ -200,3 +200,33 @@ person.newLenguaje = 'Java'
 ```
 
 Un feature similar podria ser `Object.assignProperty(obj, opts:{})` que te permite aniadir propiedades del nuevo atributo, como si es iterable o puede ser sobreescrito.
+
+### Proxy
+
+```javascript
+const target = {
+  red: 'rojo',
+  green: 'verde',
+}
+
+const handler = {
+  get(obj, prop) {
+    if (prop in obj) {
+      return obj[prop]
+    }
+    const suggestion = Object.keys(obj).find(key => {
+      return Levenshtein.get(key, prop) <= 3
+    })
+
+    if (suggestion) {
+      console.log(`${prop} no se encontro, quisiste decir ${suggestion}`)
+    }
+
+    return obj[prop]
+  },
+}
+
+let proxy = new Proxy(target, handler)
+```
+
+En el ejemplo, `proxy.reee` nos dara un aviso del posible match de la propiedad que seria `proxy.red`
