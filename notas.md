@@ -176,3 +176,27 @@ async function getFastestTopMovie() {
 ```
 
 > Todas las funciones _async_ regresan una promesa.
+
+### Getters y setters
+
+Utilizados para darle a objetos propiedades virtuales.
+
+```javascript
+let person = {
+  name: 'Miguel',
+  last_name: 'Soler',
+  age: 28,
+  languages: ['js', 'css', 'react'],
+  get fullName() {
+    return `${this.name} ${this.last_name}`
+  },
+  set newLenguaje(lenguaje) {
+    this.lenguajes.push(lenguaje)
+  },
+}
+
+console.log(person.fullName)
+person.newLenguaje = 'Java'
+```
+
+Un feature similar podria ser `Object.assignProperty(obj, opts:{})` que te permite aniadir propiedades del nuevo atributo, como si es iterable o puede ser sobreescrito.
