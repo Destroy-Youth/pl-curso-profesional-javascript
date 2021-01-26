@@ -230,3 +230,31 @@ let proxy = new Proxy(target, handler)
 ```
 
 En el ejemplo, `proxy.reee` nos dara un aviso del posible match de la propiedad que seria `proxy.red`
+
+### Generators
+
+Los generadores son funciones especiales, que al ser ejecutados regresan un objeto `{value: "valor", done: bool}`, un valor y una bandera que indica si el generador ha llegado al final de sau ejecucion. Los generadores recuerdan su estado de ejecucion, por lo que al ejecutarse nuevamente, retomaran en el punto que se quedo la ultima ejecucion.
+
+```javascript
+function* gen() {
+  let id = 1
+  let reset
+
+  yield id // Esto marca el punto donde se detiene el generador al ser ejecutado\
+  while (true) {
+    reset = yield id
+    if (reset) {
+      id = 1
+    } else {
+      id++
+    }
+  }
+}
+
+var g = gen() // "Generator { }"
+
+// next() ejecuta la siguiente seccion del generador
+g.next() // {value: 1, done: false}
+g.next() // {value: 2, done: false}
+g.next(false) // {value: 3, done: false}
+```
