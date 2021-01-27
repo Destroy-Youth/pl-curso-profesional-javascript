@@ -258,3 +258,14 @@ g.next() // {value: 1, done: false}
 g.next() // {value: 2, done: false}
 g.next(false) // {value: 3, done: false}
 ```
+
+### Fetch & AbortController
+
+Es posible cancelar la peticion al utilizar _fetch_, esto apoyandonos con el _Abortcontroller_.
+
+```javascript
+let controller = new AbortController()
+const response = await fetch(url, { signal: controller.signal })
+
+controller.abort()
+```
