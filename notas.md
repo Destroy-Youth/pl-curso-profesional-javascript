@@ -269,3 +269,9 @@ const response = await fetch(url, { signal: controller.signal })
 
 controller.abort()
 ```
+
+### IntersectionObserver
+
+Sirve para observar elementos, saber si cruzan algun umbral y nos notifique para tomar accion.
+
+El umbral se representa con un porcentaje que tiene interseccion con el _viewport_, la parte visible de nuestra pagina.

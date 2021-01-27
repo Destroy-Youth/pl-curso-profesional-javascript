@@ -14,7 +14,10 @@ class MediaPlayer {
 
   play() {
     if (this.media.paused) this.media.play()
-    else this.media.pause()
+  }
+
+  pause() {
+    if (!this.media.paused) this.media.pause()
   }
 
   mute() {
