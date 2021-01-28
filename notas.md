@@ -275,3 +275,8 @@ controller.abort()
 Sirve para observar elementos, saber si cruzan algun umbral y nos notifique para tomar accion.
 
 El umbral se representa con un porcentaje que tiene interseccion con el _viewport_, la parte visible de nuestra pagina.
+
+### Service workers
+
+Son un feature muy usado en las _Progressive web apps_, permitiendo que las aplicaciones sirvan offline gracias a que son una capa entre el navegador y el internet.
+Similar a un cache, que guarda el resultado de peticiones anteriores y usa el valor en vez de realizar otra peticion.
