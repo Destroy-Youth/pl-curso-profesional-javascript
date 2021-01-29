@@ -1,7 +1,3 @@
-function add(a: number, b: number) {
-  return a + b
-}
-
 let res = add(1, 4)
 console.log('hrllo parcel? ', res)
 
@@ -40,3 +36,27 @@ joker = false
 // Object
 let objetito: object
 objetito = {}
+
+// Functions
+function add(a: number, b: number): number {
+  return a + b
+}
+
+const sum = add(2, 45)
+
+function createAdder(a: number): (number) => number {
+  return function (b: number) {
+    return a + b
+  }
+}
+
+const addFour = createAdder(4)
+const fourPlusSix = addFour(6)
+
+// Optional and default params
+function fullName(firstName: string = 'Agente', lastName?: string): string {
+  return `${firstName} ${lastName}`
+}
+
+const myFullName = fullName(undefined, 'Smith')
+console.log(myFullName)
