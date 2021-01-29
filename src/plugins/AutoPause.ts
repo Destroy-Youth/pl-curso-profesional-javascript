@@ -1,6 +1,7 @@
 import MediaPlayer from '../MediaPlayer'
+import IPlugin from './IPlugin'
 
-class AutoPause {
+class AutoPause implements IPlugin {
   private threshold: number
   private player: MediaPlayer
 
@@ -10,7 +11,7 @@ class AutoPause {
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this)
   }
 
-  run(player) {
+  run(player: MediaPlayer) {
     this.player = player
 
     // Pause when the video is out of view in the same page

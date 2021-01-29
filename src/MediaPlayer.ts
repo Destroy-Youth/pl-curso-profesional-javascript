@@ -1,4 +1,9 @@
+import IPlugin from './plugins/IPlugin'
+
 class MediaPlayer {
+  media: HTMLMediaElement
+  plugins: IPlugin[]
+
   constructor({ mediaElement, plugins = [] }) {
     this.media = mediaElement
     this.plugins = plugins
@@ -6,7 +11,7 @@ class MediaPlayer {
     this.initPlugins()
   }
 
-  initPlugins() {
+  private initPlugins() {
     this.plugins.forEach(plugin => {
       plugin.run(this)
     })
