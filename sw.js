@@ -21,14 +21,14 @@ self.addEventListener('fetch', event => {
 async function precache() {
   const cache = await caches.open(CACHE_VERSION) // Nos da una seccion del cache en el navegador
   return cache.addAll([
-    '/',
-    '/index.html',
-    '/index.js',
-    '/src/MediaPlayer.js',
-    '/src/plugins/AutoPlay.js',
-    '/src/plugins/AutoPause.js',
-    '/src/assets/styles/index.css',
-    '/src/assets/video_example.mp4',
+    // '/',
+    // '/index.html',
+    // '/index.js',
+    // '/src/MediaPlayer.js',
+    // '/src/plugins/AutoPlay.js',
+    // '/src/plugins/AutoPause.js',
+    // '/src/assets/styles/index.css',
+    // '/src/assets/video_example.mp4',
   ])
 }
 
