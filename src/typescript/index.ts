@@ -60,3 +60,19 @@ function fullName(firstName: string = 'Agente', lastName?: string): string {
 
 const myFullName = fullName(undefined, 'Smith')
 console.log(myFullName)
+
+// Interfaces
+interface Rectangulo {
+  ancho: number
+  alto: number
+  color?: Color
+}
+
+let rec: Rectangulo = {
+  ancho: 4,
+  alto: 6,
+}
+
+function areaRectangulo(r: Rectangulo): number {
+  return r.alto * r.ancho
+}
