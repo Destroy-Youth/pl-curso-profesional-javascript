@@ -280,3 +280,22 @@ El umbral se representa con un porcentaje que tiene interseccion con el _viewpor
 
 Son un feature muy usado en las _Progressive web apps_, permitiendo que las aplicaciones sirvan offline gracias a que son una capa entre el navegador y el internet.
 Similar a un cache, que guarda el resultado de peticiones anteriores y usa el valor en vez de realizar otra peticion.
+
+## Patrones de disenio
+
+Soluciones genericas para problemas comunes en el desarrollo de software.
+
+> Es una solucion dentre de un contexto especifico.
+
+Los patrones de disenio son originarios de la arquitectura, posteriormente refinado con un enfoque al desarrrollo de software en el libro de _Design patterns_ en 1995 por "The gang of four"
+
+### Beneficios
+
+- Lenguaje comun
+- Soluciones bien probadas
+
+### Contras
+
+- Introducen complejidad
+- Soluciones limitadas por el lenguaje
+- Querer aplicar uno para todos los problemas
