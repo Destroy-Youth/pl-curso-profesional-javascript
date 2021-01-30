@@ -299,3 +299,40 @@ Los patrones de disenio son originarios de la arquitectura, posteriormente refin
 - Introducen complejidad
 - Soluciones limitadas por el lenguaje
 - Querer aplicar uno para todos los problemas
+
+### Tipos de patrones
+
+#### Creacionales
+
+- **Abstract factory**
+- **Builder**: Crear varios objetos diferentes y complejos a partir de un objeto fuente.
+- **Prototype**
+- **Singleton**
+
+#### Estructurales
+
+Composicion de objetos para formar nuevas estructuras.
+
+- **Adapter**
+- **Bridge**
+- **Composite**
+- **Decorator**
+- **Facade**
+- **Flyweight**
+- **Proxy**
+
+#### Comportamiento
+
+Gestionan algoritmos y responsabilidades entre objetos.
+
+- Chain of Responsibility
+- Command
+- Interpreter
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template Method
+- Visitor
