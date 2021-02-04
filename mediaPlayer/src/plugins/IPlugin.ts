@@ -1,4 +1,4 @@
-import MediaPlayer from '../src/MediaPlayer'
+import MediaPlayer from '../MediaPlayer'
 
 interface IPlugin {
   run(player: MediaPlayer): void

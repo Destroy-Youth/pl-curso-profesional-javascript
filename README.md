@@ -336,3 +336,16 @@ Gestionan algoritmos y responsabilidades entre objetos.
 - Strategy
 - Template Method
 - Visitor
+
+## NPM package
+
+- init npm repo
+- add the main file for the package, in this case is _MediaPlayer.js_
+- compile the files if needed
+  - install as a development dependency Typescript
+  - select as the result the folder _lib_
+- Build repo
+  - `"build": "tsc src/**/*.ts --outDir lib"`
+  - `npm run build`
+- gitignore lib and node_modules
+- `npm publish --access=public`
