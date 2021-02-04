@@ -1,4 +1,4 @@
-import MediaPlayer from '../MediaPlayer'
+import MediaPlayer from '../src/MediaPlayer'
 import IPlugin from './IPlugin'
 
 interface Ad {
